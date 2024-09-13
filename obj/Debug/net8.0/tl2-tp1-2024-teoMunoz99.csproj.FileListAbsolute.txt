@@ -1,0 +1,15 @@
+D:\pu-2024\modulo 4\tl2\tl2-tp1-2024-teoMunoz99\obj\Debug\net8.0\tl2-tp1-2024-teoMunoz99.GeneratedMSBuildEditorConfig.editorconfig
+D:\pu-2024\modulo 4\tl2\tl2-tp1-2024-teoMunoz99\obj\Debug\net8.0\tl2-tp1-2024-teoMunoz99.AssemblyInfoInputs.cache
+D:\pu-2024\modulo 4\tl2\tl2-tp1-2024-teoMunoz99\obj\Debug\net8.0\tl2-tp1-2024-teoMunoz99.AssemblyInfo.cs
+D:\pu-2024\modulo 4\tl2\tl2-tp1-2024-teoMunoz99\obj\Debug\net8.0\tl2-tp1-2024-teoMunoz99.csproj.CoreCompileInputs.cache
+D:\pu-2024\modulo 4\tl2\tl2-tp1-2024-teoMunoz99\obj\Debug\net8.0\tl2-tp1-2024-teoMunoz99.sourcelink.json
+D:\pu-2024\modulo 4\tl2\tl2-tp1-2024-teoMunoz99\bin\Debug\net8.0\tl2-tp1-2024-teoMunoz99.exe
+D:\pu-2024\modulo 4\tl2\tl2-tp1-2024-teoMunoz99\bin\Debug\net8.0\tl2-tp1-2024-teoMunoz99.deps.json
+D:\pu-2024\modulo 4\tl2\tl2-tp1-2024-teoMunoz99\bin\Debug\net8.0\tl2-tp1-2024-teoMunoz99.runtimeconfig.json
+D:\pu-2024\modulo 4\tl2\tl2-tp1-2024-teoMunoz99\bin\Debug\net8.0\tl2-tp1-2024-teoMunoz99.dll
+D:\pu-2024\modulo 4\tl2\tl2-tp1-2024-teoMunoz99\bin\Debug\net8.0\tl2-tp1-2024-teoMunoz99.pdb
+D:\pu-2024\modulo 4\tl2\tl2-tp1-2024-teoMunoz99\obj\Debug\net8.0\tl2-tp1-2024-teoMunoz99.dll
+D:\pu-2024\modulo 4\tl2\tl2-tp1-2024-teoMunoz99\obj\Debug\net8.0\refint\tl2-tp1-2024-teoMunoz99.dll
+D:\pu-2024\modulo 4\tl2\tl2-tp1-2024-teoMunoz99\obj\Debug\net8.0\tl2-tp1-2024-teoMunoz99.pdb
+D:\pu-2024\modulo 4\tl2\tl2-tp1-2024-teoMunoz99\obj\Debug\net8.0\tl2-tp1-2024-teoMunoz99.genruntimeconfig.cache
+D:\pu-2024\modulo 4\tl2\tl2-tp1-2024-teoMunoz99\obj\Debug\net8.0\ref\tl2-tp1-2024-teoMunoz99.dll
