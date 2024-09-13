@@ -6,24 +6,11 @@ namespace Clases
         public int Id { get; set; }
         public string Nombre { get; set; }
         public string Telefono { get; set; }
-        public List<Pedido> ListadoPedidos { get; private set; }
-
         public Cadete(int id, string nombre, string telefono)
         {
             Id = id;
             Nombre = nombre;
             Telefono = telefono;
-            ListadoPedidos = new List<Pedido>();
-        }
-
-        public void AsignarPedido(Pedido pedido)
-        {
-            ListadoPedidos.Add(pedido);
-        }
-
-        public void RemoverPedido(Pedido pedido)
-        {
-            ListadoPedidos.Remove(pedido);
         }
     }
     //-------------------------------------------------------
@@ -60,14 +47,30 @@ namespace Clases
             ListadoPedidos.Add(pedido);
         }
 
-        public void AsignarPedidoACadete(Pedido pedido, Cadete cadete)
+        public void AsignarCadeteAPedido(int idPedido, int idCadete)
         {
-            cadete.AsignarPedido(pedido);
+            var pedido = ListadoPedidos.FirstOrDefault(p => p.Id == idPedido);
+            var cadete = ListadoCadetes.FirstOrDefault(c => c.Id == idCadete);
+            if (pedido != null && cadete != null)
+            {
+                pedido.CadeteAsignado = cadete;
+            }
+            else
+            {
+                if (pedido == null)
+                {
+                    Console.WriteLine($"No se encontró el pedido con el Id: {idPedido}");
+                }
+                if (cadete == null)
+                {
+                    Console.WriteLine($"No se encontró el cadete con el Id: {idCadete}");
+                }
+            }
         }
 
         public void ReasignarPedido(Pedido pedido, Cadete nuevoCadete)
         {
-            foreach (var cadete in ListadoCadetes)
+            /*foreach (var cadete in ListadoCadetes)
             {
                 if (cadete.ListadoPedidos.Contains(pedido))
                 {
@@ -75,7 +78,7 @@ namespace Clases
                     nuevoCadete.AsignarPedido(pedido);
                     break;
                 }
-            }
+            }*/
         }
 
         public void GenerarInforme()
@@ -89,7 +92,7 @@ namespace Clases
             Console.WriteLine("-Pedidos realizados:\n");
             foreach (var cadete in ListadoCadetes)
             {
-                Console.WriteLine($"{cadete.Nombre} realizó {cadete.ListadoPedidos.Count} pedidos");
+                //Console.WriteLine($"{cadete.Nombre} realizó {cadete.ListadoPedidos.Count} pedidos");
             }
             Console.ReadKey();
         }
@@ -186,7 +189,14 @@ namespace Clases
 
             return listaPedidos;
         }
+
+        private float JornalACobrar(int idCadete)
+        {
+            int totalEnvios = ListadoPedidos.Count(x => x.CadeteAsignado != null && x.CadeteAsignado.Id == idCadete);
+            return totalEnvios * 500;
+        }
     }
+
 
     //-------------------------------------------------------
     public class Pedido
@@ -196,6 +206,7 @@ namespace Clases
         public string Direccion { get; set; }
         public string Estado { get; set; }
         public string Observaciones { get; set; }
+        public Cadete CadeteAsignado { get; set; } // Referencia al cadete
 
         public Pedido(int id, string cliente, string direccion, string observaciones)
         {
