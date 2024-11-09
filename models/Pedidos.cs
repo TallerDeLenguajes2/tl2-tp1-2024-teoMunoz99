@@ -46,11 +46,10 @@ namespace EspacioPedidos
         }
         //-------------
         //Constructor--
-        public Pedido(int _id, Cliente _cliente, string _direccion, string _observaciones)
+        public Pedido(int _id, Cliente _cliente, string _observaciones)
         {
             SetId(_id);
             SetCliente(_cliente);
-            SetDireccion(_direccion);
             SetEstado("Pendiente"); // estado inicial
             SetObservaciones(_observaciones);
         }
