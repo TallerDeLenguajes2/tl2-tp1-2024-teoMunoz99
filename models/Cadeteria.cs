@@ -8,10 +8,11 @@ namespace EspacioCadeteria
         //Atributos----
         private string Nombre;
         private string Telefono;
-        private List<Cadete> ListadoCadetes { get; set; }
+        private List<Cadete> ListadoCadetes;
+        private List<Pedido> ListadoPedidos;
         //-------------
         //Propiedades--
-        private string GetNombre()
+        public string GetNombre()
         {
             return Nombre;
         }
@@ -19,7 +20,7 @@ namespace EspacioCadeteria
         {
             Nombre = _value;
         }
-        private string GetTelefono()
+        public string GetTelefono()
         {
             return Telefono;
         }
@@ -27,12 +28,19 @@ namespace EspacioCadeteria
         {
             Telefono = _value;
         }
+        public List<Cadete> GetListaCadetes(){
+            return ListadoCadetes;
+        }
+        public List<Pedido> GetListaPedios(){
+            return ListadoPedidos;
+        }
         //-------------
         //Constructor--
-        public Cadeteria(string _nombre)
+        public Cadeteria(string _nombre, List<Cadete> _listaCadetes = null, List<Pedido> _listaPedidos = null)
         {
             SetNombre(_nombre);
-            ListadoCadetes = new List<Cadete>();
+            ListadoCadetes = _listaCadetes ?? new List<Cadete>();
+            ListadoPedidos = _listaPedidos ?? new List<Pedido>();
         }
         //-------------
         //Metodos------
