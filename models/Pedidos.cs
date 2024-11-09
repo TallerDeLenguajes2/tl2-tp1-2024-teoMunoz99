@@ -6,7 +6,8 @@ namespace EspacioPedidos
     {
         //Atributos----
         private int Id;
-        private Cliente Cliente;
+        private string Cliente;
+        private string Direccion;
         private string Estado;
         private string Observaciones;
         //-------------
@@ -20,11 +21,19 @@ namespace EspacioPedidos
         {
             Id = _value;
         }
-        public Cliente GetCliente()
+        public string GetCliente()
         {
             return Cliente;
         }
-        public void SetCliente(Cliente _value)
+        public void SetCliente(string _value)
+        {
+            Cliente = _value;
+        }
+        public string GetDireccion()
+        {
+            return Cliente;
+        }
+        public void SetDireccion(string _value)
         {
             Cliente = _value;
         }
@@ -46,17 +55,18 @@ namespace EspacioPedidos
         }
         //-------------
         //Constructor--
-        public Pedido(int _id, Cliente _cliente, string _observaciones)
+        public Pedido(int _id, string _cliente, string _direccion, string _estado="Pendiente" ,string _observaciones="")
         {
             SetId(_id);
             SetCliente(_cliente);
-            SetEstado("Pendiente"); // estado inicial
+            SetDireccion(_direccion);
+            SetEstado(_estado);
             SetObservaciones(_observaciones);
         }
         //-------------
         //Metodos------
         public string VerDireccionCliente(){
-            return Cliente.GetDireccion();
+            return GetDireccion();
         }
         public void VerDatosCliente(){
             
