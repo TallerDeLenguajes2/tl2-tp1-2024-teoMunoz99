@@ -7,7 +7,7 @@ namespace EspacioCadeteria
     {
         //Atributos----
         private string Nombre;
-        private int Telefono;
+        private string Telefono;
         private List<Cadete> ListadoCadetes { get; set; }
         //-------------
         //Propiedades--
@@ -19,11 +19,11 @@ namespace EspacioCadeteria
         {
             Nombre = _value;
         }
-        private int GetTelefono()
+        private string GetTelefono()
         {
             return Telefono;
         }
-        private void SetTelefono(int _value)
+        private void SetTelefono(string _value)
         {
             Telefono = _value;
         }

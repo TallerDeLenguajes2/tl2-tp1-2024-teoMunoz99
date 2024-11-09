@@ -56,8 +56,8 @@ namespace EspacioPedidos
         }
         //-------------
         //Metodos------
-        public void VerDireccionCliente(){
-            
+        public string VerDireccionCliente(){
+            return Cliente.GetDireccion();
         }
         public void VerDatosCliente(){
             
