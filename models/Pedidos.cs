@@ -1,4 +1,4 @@
-namespace Pedidos
+namespace EspacioPedidos
 {
     class Pedido
     {

@@ -1,16 +1,20 @@
-using Pedidos;
+using EspacioPedidos;
 
-namespace Cadete
+namespace EspacioCadetes
 {
     class Cadete
     {
         //Atributos-----------------------------------------
-        private int Id { get; set; }
+        private int Id;
         private string Nombre;
         private string Telefono;
         private List<Pedido> ListadoPedidos { get; set; }
         //--------------------------------------------------
         //Propiedades---------------------------------------
+        public int GetId()
+        {
+            return Id;
+        }
         public string GetNombre()
         {
             return Nombre;
