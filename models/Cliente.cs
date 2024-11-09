@@ -1,4 +1,4 @@
-namespace Cliente
+namespace EspacioClientes
 {
     class Cliente
     {
