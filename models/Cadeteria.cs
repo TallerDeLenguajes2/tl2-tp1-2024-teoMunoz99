@@ -66,10 +66,18 @@ namespace EspacioCadeteria
             ListadoCadetes.Add(_cadeteNuevo);
             return ListadoCadetes.Count > cant;
         }
-        public bool EliminarCadete(Cadete _cadeteQuitar)
+        public bool EliminarCadete(int _idCadete)
         {
             int cant = ListadoCadetes.Count;
-            ListadoCadetes.Remove(_cadeteQuitar);
+            Cadete cadeteBuscado = null;
+            foreach (var item in ListadoCadetes)
+            {
+                if(item.GetId() == _idCadete){
+                    cadeteBuscado = item;
+                    break;
+                }
+            }
+            ListadoCadetes.Remove(cadeteBuscado);
             return ListadoCadetes.Count < cant;
         }
         public float CalcularJornal(int _idCadete)
