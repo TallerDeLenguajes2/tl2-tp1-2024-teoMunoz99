@@ -1,3 +1,4 @@
+using System.Data.Common;
 using EspacioCadetes;
 using EspacioPedidos;
 
@@ -60,10 +61,12 @@ namespace EspacioCadeteria
             }
         }*/
         //-GenerarInformeActividades() crear clase informe
-        public bool RegistrarCadete(Cadete _cadeteNuevo)
+        public bool RegistrarCadete(string _nombre, string _telefono)
         {
             int cant = ListadoCadetes.Count;
-            ListadoCadetes.Add(_cadeteNuevo);
+            int id = 0; //generar id
+            Cadete cadeteNuevo = new Cadete(_nombre,_telefono, id);
+            ListadoCadetes.Add(cadeteNuevo);
             return ListadoCadetes.Count > cant;
         }
         public bool EliminarCadete(int _idCadete)
