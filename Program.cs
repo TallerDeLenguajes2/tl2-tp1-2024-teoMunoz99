@@ -1,12 +1,42 @@
 ﻿using EspacioCadeteria;
 using EspacioCadetes;
-using EspacioCsv;
+using EspacioDatos;
 using EspacioPedidos;
 
-List<Cadete> listaCad = CSV.CargarCadetes("cadetes.csv");
-List<Pedido> listPed = CSV.CargarPedidos("pedidos.csv");
+
 Console.Clear();
-Cadeteria cadeteria1 = new Cadeteria("Cadeteria La Papa", listaCad, listPed);
+Console.WriteLine("Seleccione el tipo de archivo para cargar los datos:");
+Console.WriteLine("1. CSV");
+Console.WriteLine("2. JSON");
+
+AccesoADatos accesoDatos;
+string tipoArchivo = Console.ReadLine();
+
+string rutaCadetes, rutaPedidos;
+
+if (tipoArchivo == "1")
+{
+    accesoDatos = new AccesoCSV();
+    rutaCadetes = "cadetes.csv";
+    rutaPedidos = "pedidos.csv";
+}
+else if (tipoArchivo == "2")
+{
+    accesoDatos = new AccesoJSON();
+    rutaCadetes = "cadetes.json";
+    rutaPedidos = "pedidos.json";
+}
+else
+{
+    Console.WriteLine("Opción inválida.");
+    return;
+}
+
+// Usar la instancia seleccionada para cargar datos
+var listaCadetes = accesoDatos.CargarCadetes(rutaCadetes);
+var listaPedidos = accesoDatos.CargarPedidos(rutaPedidos);
+Console.Clear();
+Cadeteria cadeteria1 = new Cadeteria("Cadeteria La Papa", listaCadetes, listaPedidos);
 
 bool salir = false;
 while (!salir)
@@ -30,7 +60,7 @@ while (!salir)
             Console.WriteLine("0. Lista de pedidos pendientes y realizados\n");
             foreach (var pedido in cadeteria1.GetListaPedios())
             {
-                Console.WriteLine("Cliente: "+pedido.GetCliente()+", "+pedido.GetDireccion()+", "+pedido.GetEstado());
+                Console.WriteLine("Cliente: " + pedido.GetCliente() + ", " + pedido.GetDireccion() + ", " + pedido.GetEstado());
             }
             Console.ReadKey();
             break;

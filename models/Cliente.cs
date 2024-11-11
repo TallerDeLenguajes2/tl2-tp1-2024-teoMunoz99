@@ -1,6 +1,6 @@
 namespace EspacioClientes
 {
-    class Cliente
+    public class Cliente
     {
         //Atributos----
         private string Nombre;

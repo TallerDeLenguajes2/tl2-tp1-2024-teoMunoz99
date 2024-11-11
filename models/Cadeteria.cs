@@ -3,7 +3,7 @@ using EspacioPedidos;
 
 namespace EspacioCadeteria
 {
-    class Cadeteria
+    public class Cadeteria
     {
         //Atributos----
         private string Nombre;

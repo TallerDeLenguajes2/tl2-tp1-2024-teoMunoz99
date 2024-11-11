@@ -4,7 +4,7 @@ using System.IO;
 
 namespace EspacioCadetes
 {
-    class Cadete
+    public class Cadete
     {
         //Atributos-----------------------------------------
         private int Id;

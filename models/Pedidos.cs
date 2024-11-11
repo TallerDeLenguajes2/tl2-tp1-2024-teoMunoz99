@@ -3,7 +3,7 @@ using EspacioCadetes;
 
 namespace EspacioPedidos
 {
-    class Pedido
+    public class Pedido
     {
         //Atributos----
         private int Id;
