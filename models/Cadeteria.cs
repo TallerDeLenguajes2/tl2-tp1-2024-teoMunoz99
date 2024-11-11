@@ -28,10 +28,12 @@ namespace EspacioCadeteria
         {
             Telefono = _value;
         }
-        public List<Cadete> GetListaCadetes(){
+        public List<Cadete> GetListaCadetes()
+        {
             return ListadoCadetes;
         }
-        public List<Pedido> GetListaPedios(){
+        public List<Pedido> GetListaPedios()
+        {
             return ListadoPedidos;
         }
         //-------------
@@ -69,6 +71,34 @@ namespace EspacioCadeteria
             int cant = ListadoCadetes.Count;
             ListadoCadetes.Remove(_cadeteQuitar);
             return ListadoCadetes.Count < cant;
+        }
+        public float CalcularJornal(int _idCadete)
+        {
+            int i = 0;
+            foreach (var item in ListadoPedidos)
+            {
+                if(item.GetCadeteAsignado().GetId() == _idCadete){
+                    i++;
+                }
+            }
+            return i * 500;
+        }
+        public void AsignarPedido(int _idCadete, int _idPedido){
+            //busco el cadete
+            Cadete cadeteBuscado = null;
+            foreach (var cadete in ListadoCadetes)
+            {
+                if(cadete.GetId() == _idCadete){
+                    cadeteBuscado = cadete;
+                }
+            }
+            //busco el pedido y le agrego el cadete
+            foreach (var pedidoBuscado in ListadoPedidos)
+            {
+                if(_idPedido == pedidoBuscado.GetId()){
+                    pedidoBuscado.SetCadeteAsignado(cadeteBuscado);
+                }
+            }
         }
         //-------------
     }
