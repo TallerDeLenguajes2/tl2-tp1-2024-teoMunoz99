@@ -44,7 +44,7 @@ namespace EspacioCadeteria
         }
         //-------------
         //Metodos------
-        public bool AsignarPedidoACadete(int _idCadete, Pedido _pedido)
+        /*public bool AsignarPedido(int _idCadete, Pedido _pedido)
         {
             //busco al cadete
             Cadete cadeteBuscado = ListadoCadetes.FirstOrDefault(c => c.GetId() == _idCadete);
@@ -54,11 +54,9 @@ namespace EspacioCadeteria
             }
             else
             {
-                //agrego el pedido
-                cadeteBuscado.AsignarPedido(_pedido);
                 return true;
             }
-        }
+        }*/
         //-GenerarInformeActividades() crear clase informe
         public bool RegistrarCadete(Cadete _cadeteNuevo)
         {

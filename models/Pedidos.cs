@@ -1,4 +1,5 @@
 using EspacioClientes;
+using EspacioCadetes;
 
 namespace EspacioPedidos
 {
@@ -10,6 +11,7 @@ namespace EspacioPedidos
         private string Direccion;
         private string Estado;
         private string Observaciones;
+        private Cadete CadeteAsignado;
         //-------------
         //Propiedades--
 
@@ -53,23 +55,32 @@ namespace EspacioPedidos
         {
             Observaciones = _value;
         }
+        public Cadete GetCadeteAsignado(){
+            return CadeteAsignado;
+        }
+        public void SetCadeteAsignado(Cadete _value){
+            CadeteAsignado = _value;
+        }
         //-------------
         //Constructor--
-        public Pedido(int _id, string _cliente, string _direccion, string _estado="Pendiente" ,string _observaciones="")
+        public Pedido(int _id, string _cliente, string _direccion, string _estado = "Pendiente", string _observaciones = "", Cadete _cadeteAsignado = null)
         {
             SetId(_id);
             SetCliente(_cliente);
             SetDireccion(_direccion);
             SetEstado(_estado);
             SetObservaciones(_observaciones);
+            SetCadeteAsignado(_cadeteAsignado);
         }
         //-------------
         //Metodos------
-        public string VerDireccionCliente(){
+        public string VerDireccionCliente()
+        {
             return GetDireccion();
         }
-        public void VerDatosCliente(){
-            
+        public void VerDatosCliente()
+        {
+
         }
         //-------------
     }
