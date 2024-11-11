@@ -1,8 +1,12 @@
-﻿using Clases;
+﻿using EspacioCadeteria;
+using EspacioCadetes;
+using EspacioCsv;
+using EspacioPedidos;
 
+List<Cadete> listaCad = CSV.CargarCadetes("cadetes.csv");
+List<Pedido> listPed = CSV.CargarPedidos("pedidos.csv");
 Console.Clear();
-Cadeteria cadeteria = new Cadeteria("Cadeteria La Papa");
-cadeteria.CargarDatosDesdeCSV("cadetes.csv", "pedidos.csv");
+Cadeteria cadeteria1 = new Cadeteria("Cadeteria La Papa", listaCad, listPed);
 
 bool salir = false;
 while (!salir)
@@ -24,7 +28,10 @@ while (!salir)
             // Listar pedidos
             Console.Clear();
             Console.WriteLine("0. Lista de pedidos pendientes y realizados\n");
-            cadeteria.ListarPedidos();
+            foreach (var pedido in cadeteria1.GetListaPedios())
+            {
+                Console.WriteLine("Cliente: "+pedido.GetCliente()+", "+pedido.GetDireccion()+", "+pedido.GetEstado());
+            }
             Console.ReadKey();
             break;
         case "1":
@@ -54,7 +61,7 @@ while (!salir)
         case "5":
             Console.Clear();
             Console.WriteLine("5. Mostrar informe\n");
-            cadeteria.GenerarInforme();
+            //cadeteria.GenerarInforme();
             Console.ReadKey();
             break;
         case "6":
