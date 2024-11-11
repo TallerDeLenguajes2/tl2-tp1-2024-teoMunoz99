@@ -39,11 +39,12 @@ namespace EspacioCadeteria
         }
         //-------------
         //Constructor--
-        public Cadeteria(string _nombre, List<Cadete> _listaCadetes = null, List<Pedido> _listaPedidos = null)
+        public Cadeteria(string _nombre, string _telefono)
         {
             SetNombre(_nombre);
-            ListadoCadetes = _listaCadetes ?? new List<Cadete>();
-            ListadoPedidos = _listaPedidos ?? new List<Pedido>();
+            SetTelefono(_telefono);
+            ListadoCadetes = new List<Cadete>();
+            ListadoPedidos = new List<Pedido>();
         }
         //-------------
         //Metodos------
